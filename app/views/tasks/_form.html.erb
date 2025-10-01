@@ -1,0 +1,27 @@
+<%= form_with(model: task, url: task.new_record? ? tasks_path : task_path(task), local: true, data: { turbo: false }) do |form| %>
+
+  <p>
+    <%= form.label :title, 'タイトル' %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :description, '詳細' %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :due_date, '締切日' %><br>
+    <%= form.date_field :due_date %>
+  </p>
+
+  <p>
+    <%= form.label :status, '状態' %><br>
+    <%= form.text_field :status %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

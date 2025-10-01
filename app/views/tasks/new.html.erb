@@ -1,0 +1,16 @@
+<h1>新しいタスク</h1>
+
+<% if @task.errors.any? %>
+  <div class="errors">
+    <h2><%= pluralize(@task.errors.count, "件のエラー") %>があります：</h2>
+    <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render 'form', task: @task %>
+
+<%= link_to '戻る', tasks_path %>
