@@ -9,13 +9,12 @@
   </tr>
   <% @tasks.each do |task| %>
     <tr>
-      <td><%= link_to task.title, task %></td>
+      <td><%= link_to task.title, task_path(task) %></td>
       <td><%= task.due_date %></td>
       <td><%= task.status %></td>
       <td>
         <%= link_to '編集', edit_task_path(task) %> |
-        <%= link_to '削除', "/tasks/#{task.id}", data: { turbo_method: :delete, confirm: '本当に削除しますか？' } %>
-
+        <%= link_to '削除', task_path(task), data: { turbo_method: :delete, confirm: '本当に削除しますか？' } %>
       </td>
     </tr>
   <% end %>

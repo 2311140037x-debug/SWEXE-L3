@@ -1,9 +1,80 @@
+/* 全体レイアウト */
 body {
   font-family: sans-serif;
   margin: 20px;
   background-color: #f9f9f9;
 }
 
+/* 2カラムレイアウト */
+#container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+#header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+#header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+#header nav a:hover {
+  text-decoration: underline;
+}
+
+#main {
+  display: flex;
+}
+
+#sidebar {
+  width: 200px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin-bottom: 10px;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
+}
+
+#content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* フッター */
+#footer {
+  background-color: #f1f1f1;
+  color: #555;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+}
+
+/* フォーム */
 form {
   background: white;
   padding: 20px;
@@ -41,23 +112,4 @@ input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.error-messages {
-  background-color: #ffe6e6;
-  border-left: 5px solid #ff4d4d;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.flash.notice {
-  background-color: #e0f7e9;
-  border-left: 5px solid #28a745;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
-.flash.alert {
-  background-color: #f8d7da;
-  border-left: 5px solid #dc3545;
-  padding: 10px;
-  margin-bottom: 15px;
-}
+/* エラーメッセージ
